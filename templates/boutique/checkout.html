@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content  %}
+<div class="row">
+    <div class="col-lg-6">
+        <div class="box-element" id="form-wrapper">
+            <form id="form">
+                <div id="user-info">
+                    <div class="form-field">
+                        <input required type="text" class="form-control" name="Nom" placeholder="Nom..">
+                    </div>
+                    <div class="form-field">
+                        <input required type="email" class="form-control" name="Email" placeholder="Email..">
+                    </div>
+
+                </div>
+
+                <div id="shipping-info">
+                    <hr>
+                    <p>Informations d'Expédition </p>
+                    <hr>
+                    <div class="form-field">
+                        <input required type="text" class="form-control" name="Addresse" placeholder="Addresse..">
+                    </div>
+                    <div class="form-field">
+                        <input required type="text" class="form-control" name="Ville" placeholder="Ville..">
+                    </div>
+                    <div class="form-field">
+                        <input required type="text" class="form-control" name="Pays" placeholder="Pays..">
+                    </div>
+                    <div class="form-field">
+                        <input required type="text" class="form-control" name="Zip code" placeholder="Zip code..">
+                    </div>
+
+                </div>
+                <br>
+                <input id="form-button" class="btn btn-success  btn-block" type="submit" value="Continuer">
+            </form>
+            
+        </div>
+        <br>
+        <div class="box-element hidden" id="payment-info">
+            <small>Option Paypal</small>
+        </div>
+    </div>
+
+    <div class="col-lg-6">
+        <div class="box-element">
+            <a class="btn btn-outline-dark" href="{% url 'boutique:cart' %}">&#x2190; Retourner au Panier</a>
+            <hr>
+            <h3>Récapitulatif de la commande</h3>
+            <hr>
+            <div class="cart-row">
+                <div style="flex: 2;"><img class="row-image" src="{% static 'images/produits/produit.jpg' %}" alt=""></div>
+                <div style="flex: 2;">Tshirt</div>
+                <div style="flex: 1;">$3</div>
+                <div style="flex: 1;">x1</div>
+            </div>    
+            <h5>Objets: 1</h5>
+            <h5>Total: $3</h5>
+            
+        </div>
+    </div>
+</div>
+
+
+{% endblock content  %}
